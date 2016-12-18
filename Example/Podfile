@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KxFoundation_Example' do
+  pod 'KxFoundation', :path => '../'
+
+  target 'KxFoundation_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
