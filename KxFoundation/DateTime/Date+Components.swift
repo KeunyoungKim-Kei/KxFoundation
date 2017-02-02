@@ -233,23 +233,23 @@ public extension Date {
     }
     
     
-    public func addMonths(_ months: Int = 1) -> Date! {
+    public func addMonths(_ months: Int = 1) -> Date {
         let calendar = Calendar.current
         var components = DateComponents()
         components.month = months
         
-        return calendar.date(byAdding: components, to: self)
+        return calendar.date(byAdding: components, to: self)!
     }
     
     
     
-    public func nextMonth() -> Date! {
+    public func nextMonth() -> Date {
         return addMonths()
     }
     
     
     
-    public func lastMonth() -> Date! {
+    public func lastMonth() -> Date {
         return addMonths(-1)
     }
     
