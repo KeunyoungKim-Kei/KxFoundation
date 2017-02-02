@@ -1,0 +1,6 @@
+framework module KxFoundation {
+  umbrella header "KxFoundation-umbrella.h"
+
+  export *
+  module * { export * }
+}

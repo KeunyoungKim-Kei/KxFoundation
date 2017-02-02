@@ -1,0 +1,16 @@
+PODS:
+  - KxFoundation (0.1.0)
+
+DEPENDENCIES:
+  - KxFoundation (from `../`)
+
+EXTERNAL SOURCES:
+  KxFoundation:
+    :path: ../
+
+SPEC CHECKSUMS:
+  KxFoundation: b376883b9005a41ad36da49ea87465c6796b1ecb
+
+PODFILE CHECKSUM: 332ff2b738bb95d24b80f0d56edf481c8b5ec936
+
+COCOAPODS: 1.1.1

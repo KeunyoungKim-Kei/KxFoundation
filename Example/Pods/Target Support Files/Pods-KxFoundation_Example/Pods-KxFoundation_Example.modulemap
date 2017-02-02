@@ -1,0 +1,6 @@
+framework module Pods_KxFoundation_Example {
+  umbrella header "Pods-KxFoundation_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
