@@ -22,7 +22,7 @@
 
 import Foundation
 
-public struct TargetEnvironment {
+public class TargetEnvironment {
     public static let current = TargetEnvironment()
     
     private init() {
@@ -31,11 +31,11 @@ public struct TargetEnvironment {
     
     public var unitTesting = false
     
-    public mutating func startUnitTesting() {
+    public func startUnitTesting() {
         unitTesting = true
     }
     
-    public mutating func stopUnitTesting() {
+    public func stopUnitTesting() {
         unitTesting = false
     }
     
