@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		034814B6F32972793145B226B7D8CBB8 /* Pods-KxFoundation_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD127B5B12F4EC7FA7FA8E7E6179B415 /* Pods-KxFoundation_Example-dummy.m */; };
+		1A054F111E4A7488005D2E4A /* TargetEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A054F101E4A7488005D2E4A /* TargetEnvironment.swift */; };
 		1A1938681E079F4800CC3929 /* TimeProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1938671E079F4800CC3929 /* TimeProfiler.swift */; };
 		1A19386B1E07A39600CC3929 /* FileManager+iCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19386A1E07A39600CC3929 /* FileManager+iCloud.swift */; };
 		1A19386D1E07A3FB00CC3929 /* NSURL+Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19386C1E07A3FB00CC3929 /* NSURL+Property.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		19BD5B78C90E402144524C9F38799DE5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A054F101E4A7488005D2E4A /* TargetEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetEnvironment.swift; sourceTree = "<group>"; };
 		1A1938671E079F4800CC3929 /* TimeProfiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeProfiler.swift; sourceTree = "<group>"; };
 		1A19386A1E07A39600CC3929 /* FileManager+iCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+iCloud.swift"; sourceTree = "<group>"; };
 		1A19386C1E07A3FB00CC3929 /* NSURL+Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Property.swift"; sourceTree = "<group>"; };
@@ -156,6 +158,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A054F0F1E4A7479005D2E4A /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				1A054F101E4A7488005D2E4A /* TargetEnvironment.swift */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
 		1A1938661E079F3D00CC3929 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +386,7 @@
 		E4B33545C2DC1DCB1F512D6509E85029 /* KxFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				1A054F0F1E4A7479005D2E4A /* Target */,
 				1A1938A21E07C01B00CC3929 /* UserDefaults */,
 				1A19389B1E07BF4500CC3929 /* String */,
 				1A1938941E07BEB100CC3929 /* Number */,
@@ -559,6 +570,7 @@
 				1A25AD641E0AC2B4007B8A87 /* String+Index.swift in Sources */,
 				1A1938851E07ADF100CC3929 /* Interval.swift in Sources */,
 				1A1938A41E07C03200CC3929 /* KFKeyValueStore.swift in Sources */,
+				1A054F111E4A7488005D2E4A /* TargetEnvironment.swift in Sources */,
 				1A25AD621E0AC128007B8A87 /* String+Regex.swift in Sources */,
 				1A1938811E07ABD500CC3929 /* Date+Components.swift in Sources */,
 				1A1938891E07B7CF00CC3929 /* Date+Format.swift in Sources */,
