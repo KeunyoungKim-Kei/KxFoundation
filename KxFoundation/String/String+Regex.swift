@@ -61,8 +61,8 @@ public extension String {
         do {
             let regex = try NSRegularExpression(pattern: pattern, options: [])
             let matchCount = regex.numberOfMatches(in: self, options: [], range: entireNSRange)
-            print(self, matchCount)
-            return matchCount == 1
+            //print(self, matchCount)
+            return matchCount >= 1 //
             
         } catch {
             print(error)

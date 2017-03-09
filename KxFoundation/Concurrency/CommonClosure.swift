@@ -26,5 +26,6 @@ import Foundation
 
 public typealias KFSimpleClosure = () -> Void
 public typealias KFBooleanResultClosure = (Bool) -> Void
+public typealias KFIntResultClosure = (Int) -> Void
 public typealias UIViewAnimationClosure = () -> Void
 public typealias UIViewAnimationCompletion = ((Bool) -> Void)?

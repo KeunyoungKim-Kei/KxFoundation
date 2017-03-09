@@ -49,6 +49,7 @@ open class KApp: UIResponder, UIApplicationDelegate {
     open var secondsFromLastLaunch: TimeInterval = 0
     
     
+    
     /////////////////////////////////////////////////////////////////////
     //
     // MARK: - Life Cycle
@@ -206,4 +207,23 @@ open class KApp: UIResponder, UIApplicationDelegate {
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
+}
+
+
+extension UIApplication {
+    open var appVersion: String? {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+    
+    open var buildVersion: String? {
+        return Bundle.main.infoDictionary?["CFBundleVersionString"] as? String
+    }
+    
+    open func moveToAppSetting() {
+        if let url = URL(string: UIApplicationOpenSettingsURLString) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
 }

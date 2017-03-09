@@ -20,17 +20,25 @@
 //  THE SOFTWARE.
 //
 
-public extension String {    
-    subscript (_ i: Int) -> String {
-        return self[Range(i ..< i + 1)]
+import Foundation
+
+open class ApiListRequestParameter: ApiRequestParameter {
+    open let pageSize: Int
+    open let pageIndex: Int
+    
+    public init(pageIndex: Int = 1, pageSize: Int = 20) {
+        self.pageIndex = pageIndex
+        self.pageSize  = pageSize
+        
+        super.init()
     }
     
-    
-    subscript (_ r: Range<Int>) -> String {
-        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
-                                            upper: min(length, max(0, r.upperBound))))
-        let start = characters.index(startIndex, offsetBy: range.lowerBound)
-        let end = characters.index(start, offsetBy: range.upperBound - range.lowerBound)
-        return self[Range(start ..< end)]
+    override open var plain: ApiDictionary {
+        var dict = super.plain
+        
+        dict[ApiField.fetchSize]  = pageSize
+        dict[ApiField.fetchIndex] = pageIndex
+        
+        return dict
     }
 }

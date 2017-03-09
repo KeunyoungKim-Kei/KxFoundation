@@ -20,17 +20,14 @@
 //  THE SOFTWARE.
 //
 
-public extension String {    
-    subscript (_ i: Int) -> String {
-        return self[Range(i ..< i + 1)]
-    }
+import Foundation
+
+open class ApiField {
+    private init() { }
     
-    
-    subscript (_ r: Range<Int>) -> String {
-        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
-                                            upper: min(length, max(0, r.upperBound))))
-        let start = characters.index(startIndex, offsetBy: range.lowerBound)
-        let end = characters.index(start, offsetBy: range.upperBound - range.lowerBound)
-        return self[Range(start ..< end)]
-    }
+    open static var fetchSize = "limit"
+    open static var fetchIndex = "page"
+    open static var resultCode = "code"
+    open static var message = "message"
+    open static var action = "action"
 }

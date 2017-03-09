@@ -20,17 +20,11 @@
 //  THE SOFTWARE.
 //
 
-public extension String {    
-    subscript (_ i: Int) -> String {
-        return self[Range(i ..< i + 1)]
-    }
-    
-    
-    subscript (_ r: Range<Int>) -> String {
-        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
-                                            upper: min(length, max(0, r.upperBound))))
-        let start = characters.index(startIndex, offsetBy: range.lowerBound)
-        let end = characters.index(start, offsetBy: range.upperBound - range.lowerBound)
-        return self[Range(start ..< end)]
-    }
+import Foundation
+
+public extension CharacterSet {
+    public static let alphabets = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    public static let numbers = CharacterSet(charactersIn: "0123456789")
+    public static let koreanConsonants = CharacterSet(charactersIn: "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅃㅆㅉ")
+    public static let koreanVowels = CharacterSet(charactersIn: "ㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅐㅒㅔㅖㅘㅙㅚㅝㅞㅟㅢ")
 }

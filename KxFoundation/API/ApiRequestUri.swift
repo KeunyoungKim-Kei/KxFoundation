@@ -20,17 +20,22 @@
 //  THE SOFTWARE.
 //
 
-public extension String {    
-    subscript (_ i: Int) -> String {
-        return self[Range(i ..< i + 1)]
+import Foundation
+
+open class ApiRequestUri {
+    private let host: String
+    private let uri: String
+    
+    public init(uri: String, host: String) {
+        self.uri = uri
+        self.host = host
     }
     
+    open var uriString: String {
+        return "\(host)\(uri)"
+    }
     
-    subscript (_ r: Range<Int>) -> String {
-        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
-                                            upper: min(length, max(0, r.upperBound))))
-        let start = characters.index(startIndex, offsetBy: range.lowerBound)
-        let end = characters.index(start, offsetBy: range.upperBound - range.lowerBound)
-        return self[Range(start ..< end)]
+    open var url: URL? {
+        return URL(string: uriString)
     }
 }
