@@ -153,6 +153,11 @@ open class ApiResponseParameter: ApiParameter {
                 return arrayDebugString(array: array, padding: padding)
             }
             
+            if let str = item as? String {
+                let paddingStr = "".padding(toLength: padding + 5, withPad: " ", startingAt: 0)
+                return "\(paddingStr)\"\(str)\""
+            }
+            
             return ""
         }
         
@@ -166,6 +171,10 @@ open class ApiResponseParameter: ApiParameter {
     open func valueDebugString(value: Any?) -> String {
         if let intValue = value as? Int {
             return "\(intValue)"
+        }
+        
+        if let boolValue = value as? Bool {
+            return "\(boolValue)"
         }
         
         if let strValue = value as? String {

@@ -20,7 +20,7 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
+import Foundation
 
 public struct TimeProfiler {
     static var shared = TimeProfiler()

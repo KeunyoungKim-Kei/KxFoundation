@@ -27,6 +27,14 @@ public extension Dictionary {
         return self[key] as? ApiDictionaryList
     }
     
+    public func stringArray(forKey key: Key) -> [String]? {
+        return self[key] as? [String]
+    }
+    
+    public func dictionary(forKey key: Key) -> ApiDictionary? {
+        return self[key] as? ApiDictionary
+    }
+    
     public func string(forKey key: Key, allowConversion: Bool = true) -> String? {
         if let value = self[key], allowConversion {
             return String(describing: value)
@@ -52,6 +60,25 @@ public extension Dictionary {
         }
         
         return self[key] as? Int
+    }
+    
+    public func double(forKey key: Key, allowConversion: Bool = true) -> Double? {
+        if let value = self[key], allowConversion {
+            switch value {
+            case let stringValue as String:
+                if let result = Double(stringValue) {
+                    return result
+                }
+            case let dblValue as Double:
+                return dblValue
+            case let fltValue as Float:
+                return Double(fltValue)
+            default:
+                break
+            }
+        }
+        
+        return self[key] as? Double
     }
     
     public func bool(forKey key: Key, allowConversion: Bool = true) -> Bool {
