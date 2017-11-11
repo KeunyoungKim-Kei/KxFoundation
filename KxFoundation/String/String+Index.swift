@@ -33,7 +33,7 @@ public extension String {
          let start = index(startIndex, offsetBy: range.lowerBound)
          let end = index(start, offsetBy: range.upperBound - range.lowerBound)
          
-         return self[start ..< end]
+         return String(self[start ..< end])
          #else
          let start = characters.index(startIndex, offsetBy: range.lowerBound)
          let end = characters.index(start, offsetBy: range.upperBound - range.lowerBound)
