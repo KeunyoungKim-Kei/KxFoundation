@@ -32,11 +32,15 @@ public extension String {
       #if swift(>=3.2)
          let start = index(startIndex, offsetBy: range.lowerBound)
          let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+         
+         return self[start ..< end]
          #else
          let start = characters.index(startIndex, offsetBy: range.lowerBound)
          let end = characters.index(start, offsetBy: range.upperBound - range.lowerBound)
+         
+         return self[Range(start ..< end)]
          #endif
       
-        return self[Range(start ..< end)]
+      
     }
 }
