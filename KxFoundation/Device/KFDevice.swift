@@ -20,9 +20,11 @@
 //  THE SOFTWARE.
 //
 
+#if os(iOS)
 import Foundation
 import CoreTelephony
 
+@available(iOS, deprecated, message: "Use KxUI instead.")
 public struct KFDevice {
     public static var mainScreenWidth: CGFloat {
         return UIScreen.main.bounds.width
@@ -61,3 +63,4 @@ public struct KFDevice {
         return canCall
     }
 }
+#endif

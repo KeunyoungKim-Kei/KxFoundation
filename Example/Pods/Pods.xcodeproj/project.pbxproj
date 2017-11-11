@@ -29,7 +29,6 @@
 		1A1938961E07BEC800CC3929 /* Bool+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1938951E07BEC800CC3929 /* Bool+Format.swift */; };
 		1A1938981E07BEF600CC3929 /* Number+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1938971E07BEF600CC3929 /* Number+Convert.swift */; };
 		1A19389A1E07BF1E00CC3929 /* Number+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1938991E07BF1E00CC3929 /* Number+Math.swift */; };
-		1A19389D1E07BF6200CC3929 /* String+Bound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19389C1E07BF6200CC3929 /* String+Bound.swift */; };
 		1A19389F1E07BF8300CC3929 /* String+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A19389E1E07BF8300CC3929 /* String+Random.swift */; };
 		1A1938A11E07BFDA00CC3929 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1938A01E07BFDA00CC3929 /* String+Validation.swift */; };
 		1A1938A41E07C03200CC3929 /* KFKeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1938A31E07C03200CC3929 /* KFKeyValueStore.swift */; };
@@ -94,7 +93,6 @@
 		1A1938951E07BEC800CC3929 /* Bool+Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Format.swift"; sourceTree = "<group>"; };
 		1A1938971E07BEF600CC3929 /* Number+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+Convert.swift"; sourceTree = "<group>"; };
 		1A1938991E07BF1E00CC3929 /* Number+Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+Math.swift"; sourceTree = "<group>"; };
-		1A19389C1E07BF6200CC3929 /* String+Bound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Bound.swift"; sourceTree = "<group>"; };
 		1A19389E1E07BF8300CC3929 /* String+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Random.swift"; sourceTree = "<group>"; };
 		1A1938A01E07BFDA00CC3929 /* String+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
 		1A1938A31E07C03200CC3929 /* KFKeyValueStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KFKeyValueStore.swift; sourceTree = "<group>"; };
@@ -268,7 +266,6 @@
 			children = (
 				AAE1AC4D1E6FC34300ABBBCF /* CharacterSet */,
 				1A84AEDB1E0B88C7000671E5 /* String+Length.swift */,
-				1A19389C1E07BF6200CC3929 /* String+Bound.swift */,
 				1A98E0CF1E0A953F00BAF176 /* String+Trim.swift */,
 				1A19389E1E07BF8300CC3929 /* String+Random.swift */,
 				1A1938A01E07BFDA00CC3929 /* String+Validation.swift */,
@@ -533,7 +530,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0910;
 				TargetAttributes = {
 					098133FB41AA8AC3FE45E79125E6DF61 = {
 						LastSwiftMigration = 0820;
@@ -600,7 +597,6 @@
 				AABD9CBA1E65D964009F5E35 /* ApiResponseParameter.swift in Sources */,
 				AABD9CC01E65DEBB009F5E35 /* ApiManager.swift in Sources */,
 				1A19386F1E07A43800CC3929 /* NSURL+iCloud.swift in Sources */,
-				1A19389D1E07BF6200CC3929 /* String+Bound.swift in Sources */,
 				1A19387A1E07A5AB00CC3929 /* Thread+Assert.swift in Sources */,
 				1A1938681E079F4800CC3929 /* TimeProfiler.swift in Sources */,
 				1A19387C1E07A70E00CC3929 /* CommonClosure.swift in Sources */,
@@ -713,6 +709,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B0A2CBD944A6272EFFB8FB2AD01FB117 /* Pods-KxFoundation_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -783,6 +780,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8CB30097D4C1EF091FC76FB1E1577B31 /* Pods-KxFoundation_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -824,19 +822,29 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -850,6 +858,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -864,20 +874,30 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -895,6 +915,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 4.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;

@@ -22,7 +22,11 @@
 
 import Foundation
 
+#if swift(>=3.1)
+public let π = Double.pi
+#else
 public let π = M_PI
+#endif
 
 public extension CGFloat {
     public var radianValue: CGFloat {

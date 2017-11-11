@@ -32,26 +32,49 @@ public enum TrimPosition {
 public extension String {
     func leadingCharCount(from charSet: CharacterSet = CharacterSet.whitespaces) -> Int {
         var cnt = 0
-        for char in characters {
+      
+      #if swift(>=3.2)
+         for char in self {
             if String(char).rangeOfCharacter(from: charSet) != nil {
-                cnt += 1
+               cnt += 1
             } else {
-                break
+               break
             }
-        }
+         }
+      #else
+         for char in characters {
+            if String(char).rangeOfCharacter(from: charSet) != nil {
+               cnt += 1
+            } else {
+               break
+            }
+         }
+         
+      #endif
         
         return cnt
     }
     
     func trailingCharCount(from charSet: CharacterSet = CharacterSet.whitespaces) -> Int {
         var cnt = 0
+      #if swift(>=3.2)
+         for char in self.reversed() {
+            if String(char).rangeOfCharacter(from: charSet) != nil {
+               cnt += 1
+            } else {
+               break
+            }
+         }
+         #else
         for char in characters.reversed() {
+         
             if String(char).rangeOfCharacter(from: charSet) != nil {
                 cnt += 1
             } else {
                 break
             }
         }
+         #endif
         
         return cnt
     }

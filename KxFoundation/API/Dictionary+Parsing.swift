@@ -133,8 +133,8 @@ public extension Dictionary {
                         if let d = item as? Dictionary<AnyHashable, Any> {
                             result.formUnion(keysForApiValidation(of: d, key: keyStr + (elem.key as! String)))
                         }
-                        else if let s = item as? String {
-                            if let key = key {
+                        else if let _ = item as? String {
+                            if let _ = key {
                                 result.insert(keyStr + "\(elem.key as! String)")
                             } else {
                                 result.insert(keyStr)

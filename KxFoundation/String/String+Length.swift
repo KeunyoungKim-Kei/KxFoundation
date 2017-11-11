@@ -22,7 +22,11 @@
 
 public extension String {
     public var length: Int {
-        return characters.count
+      #if swift(>=3.2)
+         return count
+      #else
+         return characters.count
+      #endif
     }
     
     public var utf8Length: Int {

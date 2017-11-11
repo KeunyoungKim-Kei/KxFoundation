@@ -30,8 +30,11 @@ public extension String {
         
         let trimmedString = s.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
-        
-        return trimmedString.characters.count > 0
+      #if swift(>=3.2)
+         return trimmedString.count > 0
+      #else
+         return trimmedString.characters.count > 0
+      #endif
     }
     
     /// A Boolean value that indicates whether the receiver is a valid string
@@ -50,8 +53,12 @@ public extension String {
         if String.isNullOrEmpty(str) {
             return false
         }
-        
-        return str!.characters.count >= minimumLength && str!.characters.count <= maximumLength
+      
+      #if swift(>=3.2)
+         return str!.count >= minimumLength && str!.count <= maximumLength
+      #else
+         return str!.characters.count >= minimumLength && str!.characters.count <= maximumLength
+      #endif
     }
     
     

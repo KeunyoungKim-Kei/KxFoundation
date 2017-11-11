@@ -96,7 +96,12 @@ open class ApiResponseParameter: ApiParameter {
         
         var maxLength = 10
         for (key, _) in dict {
+         #if swift(>=3.2)
+            maxLength = max(maxLength, key.count)
+         #else
             maxLength = max(maxLength, key.characters.count)
+         #endif
+         
         }
         
         var buffer = "\(logSeparator)\n"
@@ -114,7 +119,12 @@ open class ApiResponseParameter: ApiParameter {
         
         var maxLength = 10
         for (key, _) in dict {
+         #if swift(>=3.2)
+            maxLength = max(maxLength, key.count)
+         #else
             maxLength = max(maxLength, key.characters.count)
+         #endif
+         
         }
         
         let list = keys.map { (key) -> String in
@@ -178,9 +188,16 @@ open class ApiResponseParameter: ApiParameter {
         }
         
         if let strValue = value as? String {
-            if strValue.characters.count > 0 {
-                return "\"\(strValue)\""
+         #if swift(>=3.2)
+            if strValue.count > 0 {
+               return "\"\(strValue)\""
             }
+         #else
+            if strValue.characters.count > 0 {
+               return "\"\(strValue)\""
+            }
+         #endif
+         
             
             return "** empty string **"
         }

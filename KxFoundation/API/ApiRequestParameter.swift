@@ -46,7 +46,11 @@ open class ApiRequestParameter: ApiParameter {
     open override var description: String {
         var maxLength = 10
         for (key, _) in plain {
+         #if swift(>=3.2)
+            maxLength = max(maxLength, key.count)
+         #else
             maxLength = max(maxLength, key.characters.count)
+         #endif
         }
         
         var buffer = "\(logSeparator)\n"

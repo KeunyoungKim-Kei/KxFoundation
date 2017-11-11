@@ -63,17 +63,29 @@ public struct TimeProfiler {
         if verbose {
             var maxLength = 15
             for item in shared.checkPoints {
+               #if swift(>=3.2)
+                  maxLength = max(item.tag.count, maxLength)
+               #else
                 maxLength = max(item.tag.characters.count, maxLength)
+               #endif
+               
             }
-            
+         
             print("==================================================")
             for index in 0..<shared.checkPoints.count {
                 let item = shared.checkPoints[index]
                 
                 var tag = item.tag
-                if tag.characters.count < maxLength {
-                    tag = item.tag.padding(toLength: maxLength, withPad: " ", startingAt: 0)
-                }
+               #if swift(>=3.2)
+                  if tag.count < maxLength {
+                     tag = item.tag.padding(toLength: maxLength, withPad: " ", startingAt: 0)
+                  }
+                  #else
+                  if tag.characters.count < maxLength {
+                  tag = item.tag.padding(toLength: maxLength, withPad: " ", startingAt: 0)
+                  }
+                  #endif
+               
                 
                 if item == shared.checkPoints.first! {
                     print("\(tag)  0")

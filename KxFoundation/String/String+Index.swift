@@ -29,8 +29,14 @@ public extension String {
     subscript (_ r: Range<Int>) -> String {
         let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
                                             upper: min(length, max(0, r.upperBound))))
-        let start = characters.index(startIndex, offsetBy: range.lowerBound)
-        let end = characters.index(start, offsetBy: range.upperBound - range.lowerBound)
+      #if swift(>=3.2)
+         let start = index(startIndex, offsetBy: range.lowerBound)
+         let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+         #else
+         let start = characters.index(startIndex, offsetBy: range.lowerBound)
+         let end = characters.index(start, offsetBy: range.upperBound - range.lowerBound)
+         #endif
+      
         return self[Range(start ..< end)]
     }
 }

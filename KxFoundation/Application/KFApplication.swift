@@ -22,12 +22,16 @@
 //  THE SOFTWARE.
 //
 
+
+#if os(iOS) || os(tvOS)
 import Foundation
 import CoreData
 
 private let K_FIRST_LAUNCHING_AFTER_INSTALL = "K_FIRST_LAUNCHING_AFTER_INSTALL"
 private let K_LAST_LAUNCH_DATE = "K_LAST_LAUNCH_DATE"
 
+@available(iOS, deprecated: 0.1.8, message: "Use KxUI instead.")
+@available(tvOS, deprecated: 0.1.8, message: "Use KxUI instead.")
 open class KApp: UIResponder, UIApplicationDelegate {
     open var window: UIWindow?
     
@@ -227,3 +231,4 @@ extension UIApplication {
         }
     }
 }
+#endif
