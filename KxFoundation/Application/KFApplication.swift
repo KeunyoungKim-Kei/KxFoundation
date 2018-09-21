@@ -224,11 +224,20 @@ extension UIApplication {
     }
     
     open func moveToAppSetting() {
-        if let url = URL(string: UIApplication.openSettingsURLString) {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.openURL(url)
-            }
-        }
+      #if swift(>=4.2)
+      if let url = URL(string: UIApplication.openSettingsURLString) {
+         if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.openURL(url)
+         }
+      }
+      #else
+      if let url = URL(string: UIApplicationOpenSettingsURLString) {
+         if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.openURL(url)
+         }
+      }
+      #endif
+      
     }
 }
 #endif
