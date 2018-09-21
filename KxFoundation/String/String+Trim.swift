@@ -84,10 +84,10 @@ public extension String {
         switch position {
         case .start:
             let cnt = leadingCharCount(from: charSet)
-            return substring(from: index(startIndex, offsetBy: cnt))
+            return String(self[index(startIndex, offsetBy: cnt)...])
         case .end:
             let cnt = trailingCharCount(from: charSet)
-            return substring(to: index(endIndex, offsetBy: cnt * -1))
+            return String(self[...index(endIndex, offsetBy: cnt * -1)])
         case .startAndEnd:
             return trimmingCharacters(in: charSet)
         case .all:

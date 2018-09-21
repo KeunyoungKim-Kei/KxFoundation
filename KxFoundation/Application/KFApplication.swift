@@ -58,7 +58,7 @@ open class KApp: UIResponder, UIApplicationDelegate {
     //
     // MARK: - Life Cycle
     //
-    open func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    open func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         isFirstLaunchAfterInstall = KFKeyValueStore.bool(forKey: K_FIRST_LAUNCHING_AFTER_INSTALL, defaultValue: true)
         
         if isFirstLaunchAfterInstall {
@@ -119,35 +119,35 @@ open class KApp: UIResponder, UIApplicationDelegate {
     //
     // MARK: - Commonly Used Directories
     //
-    open static var documentsDirectoryURL: URL {
+    public static var documentsDirectoryURL: URL {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls.last!
     }
     
     
     
-    open static var libraryDirectoryURL: URL {
+    public static var libraryDirectoryURL: URL {
         let urls = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)
         return urls.last!
     }
     
     
     
-    open static var applicationSupportDirectoryURL: URL {
+    public static var applicationSupportDirectoryURL: URL {
         let urls = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
         return urls.last!
     }
     
     
     
-    open static var cacheDirectoryURL: URL {
+    public static var cacheDirectoryURL: URL {
         let urls = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)
         return urls.last!
     }
     
     
     
-    open static var temporaryDirectoryURL: URL {
+    public static var temporaryDirectoryURL: URL {
         return URL(fileURLWithPath: NSTemporaryDirectory())
     }
     
@@ -184,7 +184,7 @@ open class KApp: UIResponder, UIApplicationDelegate {
         assert(self.modelName != nil, "EMPTY CORE DATA MODEL NAME: use setupCoreData()")
         
         var coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = KApp.documentsDirectoryURL.appendingPathComponent("\(self.modelName).sqlite")
+        let url = KApp.documentsDirectoryURL.appendingPathComponent("\(self.modelName ?? "").sqlite")
         do {
             var options: [AnyHashable: Any]? = nil
             if self.useLightweightMigration {
@@ -224,7 +224,7 @@ extension UIApplication {
     }
     
     open func moveToAppSetting() {
-        if let url = URL(string: UIApplicationOpenSettingsURLString) {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.openURL(url)
             }

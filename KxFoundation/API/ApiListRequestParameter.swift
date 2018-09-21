@@ -23,8 +23,8 @@
 import Foundation
 
 open class ApiListRequestParameter: ApiRequestParameter {
-    open let pageSize: Int
-    open let pageIndex: Int
+    public let pageSize: Int
+    public let pageIndex: Int
     
     public init(pageIndex: Int = 1, pageSize: Int = 20) {
         self.pageIndex = pageIndex

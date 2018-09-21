@@ -22,7 +22,7 @@
 
 public extension String {    
     subscript (_ i: Int) -> String {
-        return self[Range(i ..< i + 1)]
+        return self[i ..< i + 1]
     }
     
     

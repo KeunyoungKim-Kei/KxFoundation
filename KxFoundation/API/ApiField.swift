@@ -25,9 +25,9 @@ import Foundation
 open class ApiField {
     private init() { }
     
-    open static var fetchSize = "limit"
-    open static var fetchIndex = "page"
-    open static var resultCode = "code"
-    open static var message = "message"
-    open static var action = "action"
+    public static var fetchSize = "limit"
+    public static var fetchIndex = "page"
+    public static var resultCode = "code"
+    public static var message = "message"
+    public static var action = "action"
 }
