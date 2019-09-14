@@ -28,7 +28,7 @@ public func ~(lhs: Date, rhs: Date) -> TimeInterval {
 }
 
 public struct Interval {
-    public static func exceeded(_ interval: TimeInterval, minDate: Date, maxDate: Date = Today.now) -> Bool {
+    public static func exceeded(_ interval: TimeInterval, minDate: Date, maxDate: Date = Date()) -> Bool {
         return maxDate.timeIntervalSinceReferenceDate - minDate.timeIntervalSinceReferenceDate > interval
     }
     

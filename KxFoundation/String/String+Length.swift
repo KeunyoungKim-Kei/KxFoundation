@@ -21,7 +21,7 @@
 //
 
 public extension String {
-    public var length: Int {
+    var length: Int {
       #if swift(>=3.2)
          return count
       #else
@@ -29,15 +29,15 @@ public extension String {
       #endif
     }
     
-    public var utf8Length: Int {
+    var utf8Length: Int {
         return utf8.count
     }
     
-    public var utf16Length: Int {
+    var utf16Length: Int {
         return utf16.count
     }
     
-    public var unicodeScalarLength: Int {
+    var unicodeScalarLength: Int {
         return unicodeScalars.count
     }
 }

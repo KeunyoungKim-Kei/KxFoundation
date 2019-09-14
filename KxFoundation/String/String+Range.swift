@@ -21,7 +21,7 @@
 //
 
 public extension String {
-   public var entireNSRange: NSRange {
+   var entireNSRange: NSRange {
       #if swift(>=3.2)
          return NSRange(location: 0, length: count)
       #else

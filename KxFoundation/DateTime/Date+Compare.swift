@@ -23,7 +23,7 @@
 import Foundation
 
 public extension Date {
-    public func hasSameYear(_ date: Date?) -> Bool {
+    func hasSameYear(_ date: Date?) -> Bool {
         if let d = date {
             return d.year == self.year
         }
@@ -33,13 +33,13 @@ public extension Date {
     
     
     
-    public func inThisYear() -> Bool {
+    func inThisYear() -> Bool {
         return hasSameYear(Date())
     }
     
     
     
-    public func hasSameMonth(_ date: Date?, ignoreOtherComponents: Bool = false) -> Bool {
+    func hasSameMonth(_ date: Date?, ignoreOtherComponents: Bool = false) -> Bool {
         if let d = date {
             if ignoreOtherComponents {
                 return d.month == self.month
@@ -53,13 +53,13 @@ public extension Date {
     
     
     
-    public func inThisMonth() -> Bool {
+    func inThisMonth() -> Bool {
         return hasSameMonth(Date())
     }
     
     
     
-    public func hasSameDay(_ date: Date?, ignoreOtherComponents: Bool = false) -> Bool {
+    func hasSameDay(_ date: Date?, ignoreOtherComponents: Bool = false) -> Bool {
         if let d = date {
             if ignoreOtherComponents {
                 return d.day == self.day
@@ -80,7 +80,7 @@ public extension Date {
      
      - Author: Keun young Kim
      */
-    public func isSunday() -> Bool {
+    func isSunday() -> Bool {
         return self == Weekday.sunday
     }
     
@@ -93,7 +93,7 @@ public extension Date {
      
      - Author: Keun young Kim
      */
-    public func isToday() -> Bool {
+    func isToday() -> Bool {
         let calendar = NSCalendar.current
         return calendar.isDateInToday(self as Date)
     }
@@ -108,7 +108,7 @@ public extension Date {
      - Author: Keun young Kim
      */
     @available(iOS 8, *)
-    public func isYesterday() -> Bool {
+    func isYesterday() -> Bool {
         let calendar = NSCalendar.current
         return calendar.isDateInYesterday(self as Date)
     }
@@ -123,7 +123,7 @@ public extension Date {
      - Author: Keun young Kim
      */
     @available(iOS 8, *)
-    public func isTomorrow() -> Bool {
+    func isTomorrow() -> Bool {
         let calendar = NSCalendar.current
         return calendar.isDateInTomorrow(self as Date)
     }
@@ -140,14 +140,14 @@ public extension Date {
      - Author: Keun young Kim
      */
     @available(iOS 8, *)
-    public func isSameDay(_ date: Date) -> Bool {
+    func isSameDay(_ date: Date) -> Bool {
         let calendar = NSCalendar.current
         return calendar.isDate(date as Date, inSameDayAs: self as Date)
     }
     
     
     
-    public func hasSameHour(_ date: Date?, ignoreOtherComponents: Bool = false) -> Bool {
+    func hasSameHour(_ date: Date?, ignoreOtherComponents: Bool = false) -> Bool {
         if let d = date {
             if ignoreOtherComponents {
                 return d.hour == self.hour
@@ -161,7 +161,7 @@ public extension Date {
     
     
     
-    public func hasSameMinute(_ date: Date?, ignoreOtherComponents: Bool = false) -> Bool {
+    func hasSameMinute(_ date: Date?, ignoreOtherComponents: Bool = false) -> Bool {
         if let d = date {
             if ignoreOtherComponents {
                 return d.minute == self.minute

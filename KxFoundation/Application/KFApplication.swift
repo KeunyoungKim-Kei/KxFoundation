@@ -42,7 +42,7 @@ open class KApp: UIResponder, UIApplicationDelegate {
     open var isFirstLaunchAfterInstall = false
     open var lastLaunchDate: NSDate {
         get {
-            return KFKeyValueStore.date(forKey: K_LAST_LAUNCH_DATE, defaultValue: Today.now as NSDate)
+            return KFKeyValueStore.date(forKey: K_LAST_LAUNCH_DATE, defaultValue: NSDate())
         }
         
         set {
@@ -67,11 +67,11 @@ open class KApp: UIResponder, UIApplicationDelegate {
             secondsFromLastLaunch = 0
         } else {
             print("REGULAR LAUNCH")
-            secondsFromLastLaunch = (Today.now as NSDate) - lastLaunchDate
+            secondsFromLastLaunch = NSDate() - lastLaunchDate
         }
         
         
-        lastLaunchDate = Today.now as NSDate
+        lastLaunchDate = NSDate()
         return true
     }
     

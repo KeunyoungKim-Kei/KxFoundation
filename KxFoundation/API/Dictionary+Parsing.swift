@@ -23,19 +23,19 @@
 import Foundation
 
 public extension Dictionary {
-    public func array(forKey key: Key) -> ApiDictionaryList? {
+    func array(forKey key: Key) -> ApiDictionaryList? {
         return self[key] as? ApiDictionaryList
     }
     
-    public func stringArray(forKey key: Key) -> [String]? {
+    func stringArray(forKey key: Key) -> [String]? {
         return self[key] as? [String]
     }
     
-    public func dictionary(forKey key: Key) -> ApiDictionary? {
+    func dictionary(forKey key: Key) -> ApiDictionary? {
         return self[key] as? ApiDictionary
     }
     
-    public func string(forKey key: Key, allowConversion: Bool = true) -> String? {
+    func string(forKey key: Key, allowConversion: Bool = true) -> String? {
         if let value = self[key], allowConversion {
             return String(describing: value)
         }
@@ -43,7 +43,7 @@ public extension Dictionary {
         return self[key] as? String
     }
     
-    public func integer(forKey key: Key, allowConversion: Bool = true) -> Int? {
+    func integer(forKey key: Key, allowConversion: Bool = true) -> Int? {
         if let value = self[key], allowConversion {
             switch value {
             case let stringValue as String:
@@ -62,7 +62,7 @@ public extension Dictionary {
         return self[key] as? Int
     }
     
-    public func double(forKey key: Key, allowConversion: Bool = true) -> Double? {
+    func double(forKey key: Key, allowConversion: Bool = true) -> Double? {
         if let value = self[key], allowConversion {
             switch value {
             case let stringValue as String:
@@ -81,7 +81,7 @@ public extension Dictionary {
         return self[key] as? Double
     }
     
-    public func bool(forKey key: Key, allowConversion: Bool = true) -> Bool {
+    func bool(forKey key: Key, allowConversion: Bool = true) -> Bool {
         if let value = self[key], allowConversion {
             switch value {
             case let strValue as String:
@@ -101,7 +101,7 @@ public extension Dictionary {
         return self[key] as? Bool ?? false
     }
     
-    public func url(forKey key: Key) -> URL? {
+    func url(forKey key: Key) -> URL? {
         if let str = self[key] as? String, let url = URL(string: str) {
             return url
         }
@@ -109,7 +109,7 @@ public extension Dictionary {
         return nil
     }
     
-    public func keysForApiValidation(of dict: Dictionary<AnyHashable, Any>? = nil, key: String? = nil) -> Set<String> {
+    func keysForApiValidation(of dict: Dictionary<AnyHashable, Any>? = nil, key: String? = nil) -> Set<String> {
         var result = Set<String>()
         
         var target = dict

@@ -29,13 +29,13 @@ public let π = M_PI
 #endif
 
 public extension CGFloat {
-    public var radianValue: CGFloat {
+    var radianValue: CGFloat {
         return (CGFloat(π) * self) / 180.0
     }
     
     
     
-    public var degreeValue: CGFloat {
+    var degreeValue: CGFloat {
         return self * 180.0 / CGFloat(π)
     }
 }
@@ -44,13 +44,13 @@ public extension CGFloat {
 
 
 public extension Double {
-    public var radianValue: CGFloat {
+    var radianValue: CGFloat {
         return (CGFloat(π) * CGFloat(self)) / 180.0
     }
     
     
     
-    public var degreeValue: CGFloat {
+   var degreeValue: CGFloat {
         return CGFloat(self) * 180.0 / CGFloat(π)
     }
 }
@@ -59,13 +59,13 @@ public extension Double {
 
 
 public extension Int {
-    public var radianValue: CGFloat {
+    var radianValue: CGFloat {
         return (CGFloat(π) * CGFloat(self)) / 180.0
     }
     
     
     
-    public var degreeValue: CGFloat {
+    var degreeValue: CGFloat {
         return CGFloat(self) * 180.0 / CGFloat(π)
     }
 }

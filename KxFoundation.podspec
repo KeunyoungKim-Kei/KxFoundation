@@ -8,8 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KxFoundation'
-  s.version          = '0.3.2'
+  s.version          = '0.3.3'
   s.summary          = 'Kei Foundation Framework'
+  s.swift_version    = '5.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,6 +29,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 #s.osx.deployment_target = '10.10'
+
 
   s.source_files = 'KxFoundation/**/*'
   

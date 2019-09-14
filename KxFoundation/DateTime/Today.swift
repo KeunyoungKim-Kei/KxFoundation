@@ -23,12 +23,6 @@
 import Foundation
 
 open class Today: NSDate {
-    open class var now: Date {
-        return Date()
-    }
-    
-    
-    
     open class var startDate: Date {
         return Date().removeTime()
     }

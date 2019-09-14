@@ -23,13 +23,13 @@
 import Foundation
 
 public extension Double {
-    public var NSNumberValue: NSNumber {
+    var NSNumberValue: NSNumber {
         return NSNumber(value: self as Double)
     }
     
     
     
-    public var integerValue: Int {
+    var integerValue: Int {
         return Int(self)
     }
 }
@@ -38,13 +38,13 @@ public extension Double {
 
 
 public extension Int {
-    public var NSNumberValue: NSNumber {
+    var NSNumberValue: NSNumber {
         return NSNumber(value: self as Int)
     }
     
     
     
-    public var doubleValue: Double {
+    var doubleValue: Double {
         return Double(self)
     }
 }
@@ -53,7 +53,7 @@ public extension Int {
 
 
 public extension Bool {
-    public var NSNumberValue: NSNumber {
+    var NSNumberValue: NSNumber {
         return NSNumber(value: self as Bool)
     }
 }

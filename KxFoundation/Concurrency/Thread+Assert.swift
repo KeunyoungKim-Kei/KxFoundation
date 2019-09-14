@@ -23,13 +23,13 @@
 import Foundation
 
 public extension Thread {
-    public static func isMainThreadOrStop() {
+    static func isMainThreadOrStop() {
         if !Thread.isMainThread {
             fatalError("THIS CODE MUST BE PERFORMED ON THE MAIN THREAD!!!")
         }
     }
     
-    public static func printInfo() {
+    static func printInfo() {
         if Thread.isMainThread {
             print("MAIN THREAD \(Thread.current)")
         } else {

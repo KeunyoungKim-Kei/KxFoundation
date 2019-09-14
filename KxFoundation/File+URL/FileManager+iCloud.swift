@@ -31,7 +31,7 @@ public extension FileManager{
      
      - Parameter url: A file URL specifying the file or directory to set
      */
-    public func addSkipBackupAttributeToItemAtURLOrThrows(_ url:NSURL) throws {
+    func addSkipBackupAttributeToItemAtURLOrThrows(_ url:NSURL) throws {
         try url.addSkipBackupAttributeOrThrows()
     }
     
@@ -44,7 +44,7 @@ public extension FileManager{
      
      - Returns: **true** if the resource property is successfully set to true; otherwise, false.
      */
-    public func addSkipBackupAttributeToItemAtURL(_ url:NSURL) -> Bool {
+    func addSkipBackupAttributeToItemAtURL(_ url:NSURL) -> Bool {
         return url.addSkipBackupAttribute()
     }
 }

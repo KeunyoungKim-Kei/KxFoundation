@@ -23,7 +23,7 @@
 import Foundation
 
 public extension String {
-    public static func isValid(_ str: String?) -> Bool {
+    static func isValid(_ str: String?) -> Bool {
         guard let s = str else {
             return false
         }
@@ -43,13 +43,13 @@ public extension String {
 //    }
     
     
-    public static func isNullOrEmpty(_ str: String?) -> Bool {
+    static func isNullOrEmpty(_ str: String?) -> Bool {
         return !isValid(str)
     }
     
     
     
-    public static func lengthCheck(_ str: String?, minimumLength: Int, maximumLength: Int = Int.max) -> Bool {
+    static func lengthCheck(_ str: String?, minimumLength: Int, maximumLength: Int = Int.max) -> Bool {
         if String.isNullOrEmpty(str) {
             return false
         }
@@ -63,7 +63,7 @@ public extension String {
     
     
     
-    public func equals(to str: String?) -> Bool {
+    func equals(to str: String?) -> Bool {
         guard let s = str else {
             return false
         }

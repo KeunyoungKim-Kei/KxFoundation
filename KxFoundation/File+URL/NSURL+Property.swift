@@ -29,7 +29,7 @@ public extension NSURL {
     /**
      The resource’s name in the file system, returned as an String. (read-only)
      */
-    public var name: String {
+    var name: String {
         return getStringResourceValue(URLResourceKey.nameKey.rawValue)
     }
     
@@ -38,7 +38,7 @@ public extension NSURL {
     /**
      A Boolean value that determines whether the resource pointed to by a file URL can be reached. (read-only)
      */
-    public var exist: Bool {
+    var exist: Bool {
         return checkResourceIsReachableAndReturnError(nil)
     }
     
@@ -47,7 +47,7 @@ public extension NSURL {
     /**
      A Boolean value that determines whether the resource is a directory. (read-only)
      */
-    public var isDirectory: Bool {
+    var isDirectory: Bool {
         return getBoolResourceValue(URLResourceKey.isDirectoryKey.rawValue)
     }
     
@@ -56,7 +56,7 @@ public extension NSURL {
     /**
      A Boolean value that determines whether the resource is hidden. (read-write)
      */
-    public var hidden: Bool {
+    var hidden: Bool {
         get {
             return getBoolResourceValue(URLResourceKey.isHiddenKey.rawValue)
         }
@@ -75,7 +75,7 @@ public extension NSURL {
     /**
      A Boolean value that determines whether the resource is excluded from all backups of app data. (read-write)
      */
-    public var excludedFromBackup: Bool {
+    var excludedFromBackup: Bool {
         get {
             return getBoolResourceValue(URLResourceKey.isExcludedFromBackupKey.rawValue)
         }
@@ -94,7 +94,7 @@ public extension NSURL {
     /**
      A NSNumber object that represents the resource’s size in bytes. (read-only)
      */
-    public var fileSize: NSNumber {
+    var fileSize: NSNumber {
         if !isDirectory {
             return getNSNumberResourceValue(URLResourceKey.fileSizeKey.rawValue)
         }
@@ -107,7 +107,7 @@ public extension NSURL {
     /**
      A NSDate object that represents the resource’s creation date. (read-only)
      */
-    public var creationDate: Date {
+    var creationDate: Date {
         get {
             return getNSDateResourceValue(URLResourceKey.creationDateKey.rawValue)
         }
@@ -118,7 +118,7 @@ public extension NSURL {
     /**
      A NSDate object that represents the time at which the resource was most recently accessed. (read-only)
      */
-    public var lastAccessDate: Date {
+    var lastAccessDate: Date {
         get {
             return getNSDateResourceValue(URLResourceKey.contentAccessDateKey.rawValue)
         }
@@ -129,7 +129,7 @@ public extension NSURL {
     /**
      A NSDate object that represents the time at which the resource was most recently modified. (read-only)
      */
-    public var modificationDate: Date {
+    var modificationDate: Date {
         get {
             return getNSDateResourceValue(URLResourceKey.contentModificationDateKey.rawValue)
         }

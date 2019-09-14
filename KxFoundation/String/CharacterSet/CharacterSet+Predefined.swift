@@ -23,8 +23,8 @@
 import Foundation
 
 public extension CharacterSet {
-    public static let alphabets = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
-    public static let numbers = CharacterSet(charactersIn: "0123456789")
-    public static let koreanConsonants = CharacterSet(charactersIn: "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅃㅆㅉ")
-    public static let koreanVowels = CharacterSet(charactersIn: "ㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅐㅒㅔㅖㅘㅙㅚㅝㅞㅟㅢ")
+    static let alphabets = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    static let numbers = CharacterSet(charactersIn: "0123456789")
+    static let koreanConsonants = CharacterSet(charactersIn: "ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㄲㄸㅃㅆㅉ")
+    static let koreanVowels = CharacterSet(charactersIn: "ㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㅐㅒㅔㅖㅘㅙㅚㅝㅞㅟㅢ")
 }

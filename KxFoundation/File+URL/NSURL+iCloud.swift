@@ -31,7 +31,7 @@ public extension NSURL {
      
      - Returns: **true** if the resource property is successfully set to true; otherwise, false.
      */
-    public func addSkipBackupAttribute() -> Bool {
+    func addSkipBackupAttribute() -> Bool {
         excludedFromBackup = true
         return excludedFromBackup
     }
@@ -41,7 +41,7 @@ public extension NSURL {
     /**
      Sets the receiver’s resource property for NSURLIsExcludedFromBackupKey key to true. It throws an error in cases of failure.
      */
-    public func addSkipBackupAttributeOrThrows() throws {
+    func addSkipBackupAttributeOrThrows() throws {
         try setResourceValue(true as AnyObject?, forKey: URLResourceKey.isExcludedFromBackupKey)
     }
 }

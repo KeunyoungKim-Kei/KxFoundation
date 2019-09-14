@@ -258,13 +258,13 @@ public struct KFKeyValueStore {
     
     
     public static func saveNow(forKey key: String, saveImmediately: Bool = true) {
-        save(date: Today.now as NSDate, forKey: key, saveImmediately: saveImmediately)
+        save(date: NSDate(), forKey: key, saveImmediately: saveImmediately)
     }
     
     
     
     public static func saveToday(forKey key: String, saveImmediately: Bool = true) {
-        save(date: Today.startDate as NSDate, forKey: key, saveImmediately: saveImmediately)
+        save(date: NSDate(), forKey: key, saveImmediately: saveImmediately)
     }
     
     

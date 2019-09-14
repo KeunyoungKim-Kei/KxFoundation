@@ -21,7 +21,7 @@
 //
 
 public extension String {
-    public struct Regex {
+    struct Regex {
         public static let email = "^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$"
         public static let url = "^(((http|https|ftp):\\/\\/)?([[a-zA-Z0-9]\\-\\.])+(\\.)([[a-zA-Z0-9]]){2,4}([[a-zA-Z0-9]\\/+=%&_\\.~?\\-#]*))*$" //"^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?$"
         public static let IPv4 = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
@@ -52,7 +52,7 @@ public extension String {
         private init() { }
     }
     
-    public func matches(with pattern: String) -> Bool {
+    func matches(with pattern: String) -> Bool {
         if String.isNullOrEmpty(self) || String.isNullOrEmpty(pattern) {
             return false
         }
@@ -71,7 +71,7 @@ public extension String {
         return false
     }
     
-    public func replacing(pattern: String, with: String) -> String {
+    func replacing(pattern: String, with: String) -> String {
         do {
             let regex = try NSRegularExpression(pattern: pattern, options: [])
             let buffer = NSMutableString(string: self)

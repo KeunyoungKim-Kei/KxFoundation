@@ -25,35 +25,35 @@ public extension FileManager {
     //
     // MARK: - Commonly Used Directories
     //
-    public static var documentsDirectoryURL: URL {
+    static var documentsDirectoryURL: URL {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls.last!
     }
     
     
     
-    public static var libraryDirectoryURL: URL {
+    static var libraryDirectoryURL: URL {
         let urls = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)
         return urls.last!
     }
     
     
     
-    public static var applicationSupportDirectoryURL: URL {
+    static var applicationSupportDirectoryURL: URL {
         let urls = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
         return urls.last!
     }
     
     
     
-    public static var cacheDirectoryURL: URL {
+    static var cacheDirectoryURL: URL {
         let urls = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)
         return urls.last!
     }
     
     
     
-    public static var temporaryDirectoryURL: URL {
+    static var temporaryDirectoryURL: URL {
         return URL(fileURLWithPath: NSTemporaryDirectory())
     }
     
@@ -61,7 +61,7 @@ public extension FileManager {
     ////////////////////////////////////////////////////////////////////////////////////////////////
     // MARK: - 
     
-    public static func cacheDirectoryPath() -> String? {
+    static func cacheDirectoryPath() -> String? {
         let list = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         if list.count > 0 {
             return list.last
@@ -72,7 +72,7 @@ public extension FileManager {
     
     
     
-    public static func documentDirectoryPath() -> String? {
+    static func documentDirectoryPath() -> String? {
         let list = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         if list.count > 0 {
             return list.last

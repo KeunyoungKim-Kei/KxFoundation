@@ -21,7 +21,7 @@
 //
 
 public extension String {
-    public var fileExtension: String? {
+    var fileExtension: String? {
         let str = NSString(string: self)
         let ext = str.pathExtension
         
@@ -34,7 +34,7 @@ public extension String {
     
     
     
-    public func isSupportImageFile(_ imageFileExtensions:[String] = ["tiff", "tif", "jpeg", "jpg", "gif", "png", "bmp", "bmpf", "ico", "cur", "xbm"]) -> Bool {
+    func isSupportImageFile(_ imageFileExtensions:[String] = ["tiff", "tif", "jpeg", "jpg", "gif", "png", "bmp", "bmpf", "ico", "cur", "xbm"]) -> Bool {
         let str = NSString(string: self)
         let ext = str.pathExtension.lowercased()
         
@@ -49,7 +49,7 @@ public extension String {
     
     
     
-    public static func capacityStringFromBytes(_ bytes: UInt64, byteUnitString: String = "Bytes", KBUnitString: String = "KB", MBUnitString: String = "MB", GBUnitString: String = "GB") -> String {
+    static func capacityStringFromBytes(_ bytes: UInt64, byteUnitString: String = "Bytes", KBUnitString: String = "KB", MBUnitString: String = "MB", GBUnitString: String = "GB") -> String {
         let minGB: UInt64 = 1024 * 1024 * 1024
         let minMB: UInt64 = 1024 * 1024
         let minKB: UInt64 = 1024

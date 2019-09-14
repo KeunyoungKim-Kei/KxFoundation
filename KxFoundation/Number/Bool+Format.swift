@@ -23,13 +23,13 @@
 import Foundation
 
 public extension Bool {
-    public func toYorN() -> String {
+    func toYorN() -> String {
         return self ? "y" : "n"
     }
     
     
     
-    public func toTrueOrFalse() -> String {
+    func toTrueOrFalse() -> String {
         return self ? "true" : "false"
     }
 }

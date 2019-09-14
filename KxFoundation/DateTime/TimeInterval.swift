@@ -23,31 +23,31 @@
 import Foundation
 
 public extension Double {
-    public var second: TimeInterval {
+    var second: TimeInterval {
         return self * SECOND
     }
     
-    public var minute: TimeInterval {
+    var minute: TimeInterval {
         return self * MINUTE
     }
     
-    public var hour: TimeInterval {
+    var hour: TimeInterval {
         return self * HOUR
     }
     
-    public var day: TimeInterval {
+    var day: TimeInterval {
         return self * DAY
     }
     
-    public var year: TimeInterval {
+    var year: TimeInterval {
         return self * YEAR
     }
     
-    public var secondInterval: TimeInterval {
+    var secondInterval: TimeInterval {
         return self * SECOND
     }
     
-    public var minuteInterval: TimeInterval {
+    var minuteInterval: TimeInterval {
         if self > 0 {
             return self / MINUTE
         }
@@ -55,7 +55,7 @@ public extension Double {
         return self
     }
     
-    public var hourInterval: TimeInterval {
+    var hourInterval: TimeInterval {
         if self > 0 {
             return self / HOUR
         }
@@ -63,7 +63,7 @@ public extension Double {
         return self
     }
     
-    public var dayInterval: TimeInterval {
+    var dayInterval: TimeInterval {
         if self > 0 {
             return self / DAY
         }
@@ -71,7 +71,7 @@ public extension Double {
         return self
     }
     
-    public func toString(_ format: String, convertToInt: Bool = true) -> String {
+    func toString(_ format: String, convertToInt: Bool = true) -> String {
         if convertToInt {
             return String(format: format, Int(self))
         }

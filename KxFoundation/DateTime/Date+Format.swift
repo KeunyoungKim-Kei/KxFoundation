@@ -25,14 +25,14 @@ import Foundation
 fileprivate let privateFormatter = DateFormatter()
 
 public extension Date {
-    public func format(_ format: String = "yyyyMMdd") -> String {
+    func format(_ format: String = "yyyyMMdd") -> String {
         privateFormatter.dateFormat = format
         return privateFormatter.string(from: self)
     }
     
     
     
-    public func toLocalizedString(_ format: String, locale: Locale = Locale.current, timeZone: TimeZone = TimeZone.current) -> String {
+    func toLocalizedString(_ format: String, locale: Locale = Locale.current, timeZone: TimeZone = TimeZone.current) -> String {
         let currentLocale = privateFormatter.locale
         let currentTimeZone = privateFormatter.timeZone
         
@@ -49,14 +49,14 @@ public extension Date {
     
     
     
-    public func toStyledString(_ style: DateFormatter.Style) -> String {
+    func toStyledString(_ style: DateFormatter.Style) -> String {
         privateFormatter.dateStyle = style
         return privateFormatter.string(from: self)
     }
     
     
     
-    public func toStyledString(dateStyle dStyle: DateFormatter.Style, timeStyle tStyle: DateFormatter.Style) -> String {
+    func toStyledString(dateStyle dStyle: DateFormatter.Style, timeStyle tStyle: DateFormatter.Style) -> String {
         privateFormatter.dateStyle = dStyle
         privateFormatter.timeStyle = tStyle
         return privateFormatter.string(from: self)

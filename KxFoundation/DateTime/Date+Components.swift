@@ -66,7 +66,7 @@ public extension Date {
     /**
      The number of era units for **self**.
      */
-    public var era: Int {
+    var era: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.era], from: self)
         return components.era!
@@ -77,7 +77,7 @@ public extension Date {
     /**
      The number of year units for **self**.
      */
-    public var year: Int {
+    var year: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year], from: self)
         return components.year!
@@ -88,7 +88,7 @@ public extension Date {
     /**
      The number of month units for **self**.
      */
-    public var month: Int {
+    var month: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.month], from: self)
         return components.month!
@@ -99,7 +99,7 @@ public extension Date {
     /**
      The number of day units for **self**.
      */
-    public var day: Int {
+    var day: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: self)
         return components.day!
@@ -110,7 +110,7 @@ public extension Date {
     /**
      The number of hour units for **self**.
      */
-    public var hour: Int {
+    var hour: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.hour], from: self)
         return components.hour!
@@ -121,7 +121,7 @@ public extension Date {
     /**
      The number of minute units for **self**.
      */
-    public var minute: Int {
+    var minute: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.minute], from: self)
         return components.minute!
@@ -132,7 +132,7 @@ public extension Date {
     /**
      The number of second units for **self**.
      */
-    public var second: Int {
+    var second: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.second], from: self)
         return components.second!
@@ -142,7 +142,7 @@ public extension Date {
     /**
      The number of the weekday unit for **self**.
      */
-    public var weekday: Int {
+    var weekday: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.weekday], from: self)
         return components.weekday!
@@ -153,7 +153,7 @@ public extension Date {
     /**
      The ordinal number of weekday units for **self**.
      */
-    public var weekdayOrdinal: Int {
+    var weekdayOrdinal: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.weekdayOrdinal], from: self)
         return components.weekdayOrdinal!
@@ -164,7 +164,7 @@ public extension Date {
     /**
      The number of quarters for **self**.
      */
-    public var quarter: Int {
+    var quarter: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.quarter], from: self)
         return components.quarter!
@@ -175,7 +175,7 @@ public extension Date {
     /**
      The ISO 8601 week date of the year for **self**.
      */
-    public var weekOfYear: Int {
+    var weekOfYear: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.weekOfYear], from: self)
         return components.weekOfYear!
@@ -183,7 +183,7 @@ public extension Date {
     
     
     
-    public func removeTime() -> Date! {
+    func removeTime() -> Date! {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: self as Date)
         
@@ -201,13 +201,13 @@ public extension Date {
     
     
     
-    public func startDateOfDay() -> Date {
+    func startDateOfDay() -> Date {
         return self.removeTime()
     }
     
     
     
-    public func endDateOfDay() -> Date {
+    func endDateOfDay() -> Date {
         let start = startDateOfDay()
         let tomorrow = Interval.dateByAddingDays(1, toDate: start)
         
@@ -216,7 +216,7 @@ public extension Date {
     
     
     
-    public func startDateOfMonth() -> Date! {
+    func startDateOfMonth() -> Date! {
         let calendar = NSCalendar.current
         let components = calendar.dateComponents([.year, .month], from: self)
         
@@ -233,7 +233,7 @@ public extension Date {
     }
     
     
-    public func addMonths(_ months: Int = 1) -> Date {
+    func addMonths(_ months: Int = 1) -> Date {
         let calendar = Calendar.current
         var components = DateComponents()
         components.month = months
@@ -243,19 +243,19 @@ public extension Date {
     
     
     
-    public func nextMonth() -> Date {
+    func nextMonth() -> Date {
         return addMonths()
     }
     
     
     
-    public func lastMonth() -> Date {
+    func lastMonth() -> Date {
         return addMonths(-1)
     }
     
     
     
-    public static func zeroDate() -> Date {
+    static func zeroDate() -> Date {
         return Date(timeIntervalSince1970: 0)
     }
 }

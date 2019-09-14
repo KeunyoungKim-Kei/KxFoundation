@@ -21,11 +21,11 @@
 //
 
 public extension String {
-    public var koreanUnicodeRange: (Int, Int) {
+    var koreanUnicodeRange: (Int, Int) {
         return (0xAC00, 0xD7AF)
     }
     
-    public func chosungOfChar(at index: Int = 0) -> String? {
+    func chosungOfChar(at index: Int = 0) -> String? {
         guard utf16.count > 0 && index >= 0 && index < utf16.count else { return nil }
         
         let chosungList = ["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]

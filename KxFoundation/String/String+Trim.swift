@@ -79,7 +79,7 @@ public extension String {
         return cnt
     }
     
-    public func trim(charactersIn charSet: CharacterSet = CharacterSet.whitespaces, position: TrimPosition = .startAndEnd) -> String {
+    func trim(charactersIn charSet: CharacterSet = CharacterSet.whitespaces, position: TrimPosition = .startAndEnd) -> String {
         
         switch position {
         case .start:

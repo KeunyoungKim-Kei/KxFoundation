@@ -23,7 +23,7 @@
 import Foundation
 
 public extension String {
-    public static func randomString(length len: Int, charactersIn chars: NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") -> String {
+    static func randomString(length len: Int, charactersIn chars: NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") -> String {
         let randomString = NSMutableString(capacity: len)
         
         for _ in 0 ..< len {
